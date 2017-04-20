@@ -41,7 +41,7 @@ describe("Test", function () {
         var result = tv4.validateResult(json, schema);
         assert.lengthOf(result.missing, 0, "Missing/unresolved JSON schema $refs (" + result.missing && result.missing.join(', ') + ") in schema: " + JSON.stringify(schema, null, 4) + " Error");
         assert.ok(result.valid, "Got unexpected response body: " + result.error && result.error.message + " " + JSON.stringify(schema, null, 4) + " Error");
-        provider
+        
       }
       providerURI = response.headers['location'];
       var splits = providerURI.split("/");
