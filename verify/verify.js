@@ -15,7 +15,7 @@ var providerId, providerURI, orderURI, orderId;
 
 describe("Test", function () {
   this.timeout(60000);
-  it("POST /providers -> 201", function (done) {
+  step("POST /providers -> 201", function (done) {
     var options = {
       url: endpoint + '/providers',
       method: 'POST',
@@ -50,7 +50,7 @@ describe("Test", function () {
     });
   });
   
-  it("GET /providers/{providerId} -> 200", function (done) {
+  step("GET /providers/{providerId} -> 200", function (done) {
     var options = {
       url: endpoint + '/providers/' + providerId,
       method: 'GET',
@@ -91,7 +91,7 @@ describe("Test", function () {
     });
   });
   
-  it("GET /providers -> 200", function (done) {
+  step("GET /providers -> 200", function (done) {
     var options = {
       url: endpoint + '/providers',
       method: 'GET',
@@ -139,7 +139,7 @@ describe("Test", function () {
     });
   });
   
-  it("PUT /providers/{id} -> 204", function (done) {
+  step("PUT /providers/{id} -> 204", function (done) {
     var options = {
       url: endpoint + '/providers/' + providerId,
       method: 'PUT',
@@ -171,7 +171,7 @@ describe("Test", function () {
     });
   });
   
-  it("DELETE /providers -> 204", function (done) {
+  step("DELETE /providers -> 204", function (done) {
     var options = {
       url: endpoint + '/providers/' + providerId,
       method: 'DELETE',
@@ -189,7 +189,7 @@ describe("Test", function () {
   });
   
   
-  it("POST /orders -> 201", function (done) {
+  step("POST /orders -> 201", function (done) {
     var options = {
       url: endpoint + '/orders',
       method: 'POST',
@@ -214,7 +214,7 @@ describe("Test", function () {
     });
   });
   
-  it("GET /orders -> 200", function (done) {
+  step("GET /orders -> 200", function (done) {
     var options = {
       url: orderURI,
       method: 'GET',
@@ -264,7 +264,7 @@ describe("Test", function () {
     });
   });
   
-  it("GET /orders/{orderId} -> 200", function (done) {
+  step("GET /orders/{orderId} -> 200", function (done) {
     var options = {
       url: endpoint + '/orders' + orderId,
       method: 'GET',
@@ -308,7 +308,7 @@ describe("Test", function () {
     });
   });
   
-  it("PUT /orders/{orderId} -> 204", function (done) {
+  step("PUT /orders/{orderId} -> 204", function (done) {
     var options = {
       url: endpoint + '/orders/' + orderId,
       method: 'PUT',
@@ -329,7 +329,7 @@ describe("Test", function () {
     });
   });
   
-  it("DELETE /orders/{orderId} -> 204", function (done) {
+  step("DELETE /orders/{orderId} -> 204", function (done) {
     var options = {
       url: endpoint + '/orders/' + orderId,
       method: 'DELETE',
