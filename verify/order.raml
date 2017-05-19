@@ -90,7 +90,7 @@ mediaType: application/json
                 "order_id": "orders/10"
               }
 
- /{id}:
+  /{id}:
     get:
       description: As a admin, I can get an order so that I can manage it.
       responses:
@@ -123,37 +123,36 @@ mediaType: application/json
 
     put:
       description: As a admin, I can update an order so that I modify order details.
-        body:
-          application/json:
-            schema: |
-              {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "object",
-                "properties": {
-                  "provider_id": {
-                    "type": "integer"
-                  },
-                  "product_id": {
-                    "type": "integer"
-                  },
-                  "count": {
-                    "type": "integer"
-                   },
-                   "required": ["product_id", "provider_id", "count"]
-                }
+      body:
+        application/json:
+          schema: |
+            {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "properties": {
+                "provider_id": {
+                  "type": "integer"
+                },
+                "product_id": {
+                  "type": "integer"
+                },
+                "count": {
+                  "type": "integer"
+                 },
+                 "required": ["product_id", "provider_id", "count"]
               }
-            example: |
-              {
-                "provider_id": 1,
-                "product_id": 2,
-                "count": 10000
-              }
-        responses:
-          204:
-
-
+            }
+          example: |
+            {
+              "provider_id": 1,
+              "product_id": 2,
+              "count": 10000
+            }
+      responses:
+        204:
     delete:
       description: As a admin, I can delete an order so that I can remove an useless order.
+      responses:
         204:
 
 /providers:
@@ -163,37 +162,37 @@ mediaType: application/json
       200:
         body:
           application/json:
-           schema: |
-             {
-               "$schema": "http://json-schema.org/draft-04/schema#",
-               "type": "object",
-               "totalCount": {
-                 "type": "integer"
-               },
-               "providers": {
-                 "type": "array",
-                 "properties": {
-                   "id": {
-                     "type": "integer"
-                   },
-                   "name": {
-                     "type": "string"
-                    }
-                 },
-                 "required": ["id", "name"]
+            schema: |
+              {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "totalCount": {
+                  "type": "integer"
+                },
+                "providers": {
+                  "type": "array",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                     }
+                  },
+                  "required": ["id", "name"]
+                }
+              }
+            example: |
+              {
+                 "totalCount": 2,
+                 [{
+                   "id": 1,
+                   "name": "Super Apple"
+                  }, {
+                   "id": 2,
+                   "name": "Little cookie"
+                 }]
                }
-             }
-          example: |
-            {
-              "totalCount": 2,
-              [{
-                "id": 1,
-                "name": "Super Apple"
-               }, {
-                "id": 2,
-                "name": "Little cookie"
-              }]
-            }
 
 
   post:
@@ -243,25 +242,25 @@ mediaType: application/json
         200:
           body:
             application/json:
-             schema: |
-               {
-                 "$schema": "http://json-schema.org/draft-04/schema#",
-                 "type": "object",
-                 "properties": {
-                   "id": {
-                     "type": "integer"
-                   },
-                   "name": {
-                     "type": "string"
+              schema: |
+                {
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
                     },
-                    "required": ["id", "name"]
-                 }
-               }
-            example: |
-              {
-                "id": 1,
-                "name": "Super Apple"
-              }
+                    "name": {
+                      "type": "string"
+                     },
+                     "required": ["id", "name"]
+                  }
+                }
+              example: |
+                {
+                  "id": 1,
+                  "name": "Super Apple"
+                }
 
     put:
       description: As a admin, I can update a provider's detail when this provider's detail had changed.
@@ -293,5 +292,6 @@ mediaType: application/json
 
     delete:
       description: As a admin, I can delete a provider when I won't to buy products from it.
+      responses:
         204:
 
